@@ -23,11 +23,16 @@ header {
     margin: 10px auto;
 }
 
-/* Media Queries for Mobile */
 @media (max-width: 768px) {
-    header {
-        padding: 20px;
+    nav ul {
+        flex-direction: column; /* Stack vertically */
     }
+}
+
+
+nav ul li {
+    margin: 0 15px;
+}
 
     nav ul {
         flex-direction: column;
@@ -35,12 +40,42 @@ header {
     }
 
     .container {
-        width: 95%;
+        width: 90%; /* Instead of 80% */
+        max-width: 1200px; /* Prevents over-stretching */
     }
 
-    .team-member img {
-        max-width: 150px;
-    }
+section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.feature-box {
+    width: 30%;
+    padding: 20px;
+    text-align: center;
+    background: #ff6600;
+    color: white;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+/* Call-to-Action Button */
+.cta-button {
+    display: inline-block;
+    background: #ff6600;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: bold;
 }
 
 /* CTA Button Hover Effect */
@@ -70,3 +105,4 @@ footer {
         max-width: 150px;
     }
 }
+
