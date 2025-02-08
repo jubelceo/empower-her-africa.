@@ -1,108 +1,251 @@
-/* Default styles for all screens */
+/* styles.css */
+/* Global Styles */
 body {
     font-family: 'Lora', serif;
     margin: 0;
     padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
 }
 
 header {
+    text-align: center;
+    background: orange;
     padding: 40px;
+    color: white;
+    position: relative;
 }
 
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Logo Styles */
+.logo-container {
+    width: 180px;
+    height: 180px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+/* Navigation */
+nav {
+    background: #333;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    width: 300%;
+    transition: transform 1s ease;
+}
+
+.slider img {
+    width: 33.33%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Team Section */
+.team-section {
+    padding: 50px 0;
+    background-color: #f4f4f4;
+}
+
+.team-member {
+    display: inline-block;
+    margin: 20px;
+    width: 250px;
+    text-align: center;
 }
 
 .team-member img {
     width: 100%;
     max-width: 200px;
-    height: auto;
-    display: block;
-    margin: 10px auto;
-}
-
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column; /* Stack vertically */
-    }
-}
-
-
-nav ul li {
-    margin: 0 15px;
-}
-
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .container {
-        width: 90%; /* Instead of 80% */
-        max-width: 1200px; /* Prevents over-stretching */
-    }
-
-section {
-    padding: 50px 0;
-    text-align: center;
-}
-
-/* Features Section */
-.features {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.feature-box {
-    width: 30%;
-    padding: 20px;
-    text-align: center;
-    background: #ff6600;
-    color: white;
+    height: 265px;
     border-radius: 10px;
-    margin: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-/* Call-to-Action Button */
-.cta-button {
-    display: inline-block;
+/* Forms & CTAs */
+.donate-section, .volunteer-section {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+}
+
+.donate-btn, .volunteer-btn {
     background: #ff6600;
     color: white;
-    padding: 15px 30px;
-    text-decoration: none;
+    padding: 10px 20px;
+    border: none;
     border-radius: 5px;
-    margin-top: 20px;
-    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-/* CTA Button Hover Effect */
-.cta-button:hover {
-    background: #e65c00;
+.donate-btn:hover, .volunteer-btn:hover {
+    background: #cc5500;
+    transform: scale(1.05);
 }
 
 /* Footer */
-footer {
-    background: #333;
-    color: white;
+.socials {
     text-align: center;
     padding: 20px;
+    background: #333;
+    color: white;
 }
 
-/* Extra Small Screens */
+.social-logo {
+    width: 40px;
+    height: 40px;
+    transition: opacity 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .hero {
+        height: 300px;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .team-member {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .feature-box {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .video-section iframe {
+        width: 100%;
+        height: 300px;
+    }
+}
+
 @media (max-width: 480px) {
     h1 {
         font-size: 24px;
     }
 
-    .feature-box {
+    .logo-container {
+        width: 120px;
+        height: 120px;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .donate-section, .volunteer-section {
         width: 100%;
     }
 
     .team-member img {
-        max-width: 150px;
+        height: 200px;
     }
 }
 
+/* Video Section */
+.video-section {
+    position: relative;
+    padding: 40px 0;
+    background: linear-gradient(135deg, #ff6600, #ff3366);
+    border-radius: 10px;
+    margin: 40px auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.video-section iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    margin: 20% auto;
+}
